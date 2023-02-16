@@ -26,13 +26,11 @@ jobs:
     - name: Install dependencies
       run: |
           pip install -r ./PixivUtil2/requirements.txt
-          pwd
     - name: Run PixivUtil2
       env:
           USERNAME: ${{secrets.USERNAME}}
           PASSWORD: ${{secrets.PASSWORD}}
           COOKIE: ${{secrets.COOKIE}}
       run: |
-          pwd
           cd ./PixivUtil2
           bash run.sh

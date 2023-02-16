@@ -1,4 +1,4 @@
-python PixivUitl2.py
+python PixivUtil2.py
 expect {
     "*Pixiv*" {
         send "16\r"
