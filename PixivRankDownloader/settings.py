@@ -1,6 +1,6 @@
 import os
 
-COOKIE_FILE = os.environ['COOKIE']
+COOKIE_FILE = os.environ['COOKIE_FILE']
 
 # 下载线程数
 DOWNLOAD_THREADS = 4
