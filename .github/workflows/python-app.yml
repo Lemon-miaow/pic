@@ -32,5 +32,6 @@ jobs:
           PASSWORD: ${{secrets.PASSWORD}}
           COOKIE: ${{secrets.COOKIE}}
       run: |
+          pwd
           cd ./PixivUtil2
           bash run.sh
