@@ -35,9 +35,9 @@ jobs:
           PASSWORD=${{secrets.PASSWORD}}
           USERNAME=${{secrets.USERNAME}}
           COOKIE=${{secrets.COOKIE}}
-          sed 's/${PASSWORD}/"$PASSWORD"/g'
-          sed 's/${USERNAME}/"$USERNAME"/g'
-          sed 's/${COOKIE}/"$COOKIE"/g'
+          sed -i 's/${PASSWORD}/"$PASSWORD"/g' config.ini
+          sed -i 's/${USERNAME}/"$USERNAME"/g' config.ini
+          sed -i 's/${COOKIE}/"$COOKIE"/g' config.ini
           
           cd ./PixivUtil2
           bash run.sh
