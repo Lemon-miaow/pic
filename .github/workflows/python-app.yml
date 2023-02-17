@@ -32,12 +32,12 @@ jobs:
           PASSWORD: ${{secrets.PASSWORD}}
           COOKIE: ${{secrets.COOKIE}}
       run: |
-          PASSWORD=${{secrets.PASSWORD}}
-          USERNAME=${{secrets.USERNAME}}
-          COOKIE=${{secrets.COOKIE}}
-          sed -i 's/${PASSWORD}/"$PASSWORD"/g' ./PixivUtil2/config.ini
-          sed -i 's/${USERNAME}/"$USERNAME"/g' ./PixivUtil2/config.ini
-          sed -i 's/${COOKIE}/"$COOKIE"/g' ./PixivUtil2/config.ini
+          # PASSWORD=${{secrets.PASSWORD}}
+          # USERNAME=${{secrets.USERNAME}}
+          # COOKIE=${{secrets.COOKIE}}
+          sed -i "s/{PASSWORD}/"$PASSWORD"/g" ./PixivUtil2/config.ini
+          sed -i "s/{USERNAME}/"$USERNAME"/g" ./PixivUtil2/config.ini
+          sed -i "s/{COOKIE}/"$COOKIE"/g" ./PixivUtil2/config.ini
           
           cd ./PixivUtil2
           bash run.sh
