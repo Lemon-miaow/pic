@@ -35,8 +35,10 @@ jobs:
           PASSWORD=${{secrets.PASSWORD}}
           USERNAME=${{secrets.USERNAME}}
           COOKIE=${{secrets.COOKIE}}
+          
           sed 's/${PASSWORD}/"$PASSWORD"/g'
           sed 's/${USERNAME}/"$USERNAME"/g'
           sed 's/${COOKIE}/"$COOKIE"/g'
+          
           cd ./PixivUtil2
           bash run.sh
