@@ -1,6 +1,6 @@
-echo 'PASSWORD='${{secrets.PASSWORD}}
-echo 'USERNAME='${{secrets.USERNAME}}
-echo 'COOKIE='${{secrets.COOKIE}}
+PASSWORD=${{secrets.PASSWORD}}
+USERNAME=${{secrets.USERNAME}}
+COOKIE=${{secrets.COOKIE}}
 
 sed 's/${PASSWORD}/"$PASSWORD"/g'
 sed 's/${USERNAME}/"$USERNAME"/g'
