@@ -5,6 +5,9 @@ on:
     - cron: '0 0 * * *' # utc+8 8:00
   watch:
     types: starred
+  push:
+    branches:
+      - source  # may only test
     
 jobs:
   build:
