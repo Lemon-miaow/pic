@@ -1,4 +1,4 @@
-name: Rust auto execution
+name: Auto execution
 
 on:
   schedule:
