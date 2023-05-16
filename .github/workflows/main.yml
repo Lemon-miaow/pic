@@ -20,6 +20,7 @@ jobs:
           mkdir ~/main && cd ~/main
           git clone -b main git@github.com:Lemon-miaow/pic.git 
     - name: Run
+      run: |
           cd ~/source/pic/compiled
           chmod +x fetch_md
           ./fetch_md https://raw.githubusercontent.com/gxywy/pixiv-daily/main/README.md
