@@ -19,9 +19,9 @@ jobs:
     - name: Clone branch
       run: |
           mkdir ~/source && cd ~/source
-          git clone -b source git@github.com:Lemon-miaow/pic.git
+          git clone -b source https://github.com/Lemon-miaow/pic.git
           mkdir ~/main && cd ~/main
-          git clone -b main git@github.com:Lemon-miaow/pic.git 
+          git clone -b main https://github.com/Lemon-miaow/pic.git
     - name: Run
       run: |
           cd ~/source/pic/compiled
