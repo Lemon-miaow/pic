@@ -28,15 +28,12 @@ jobs:
           chmod +x fetch_md
           ./fetch_md https://raw.githubusercontent.com/gxywy/pixiv-daily/main/README.md
           cp -r `ls ~/source/pic/compiled/* | grep -v fetch_md | xargs` ~/main/pic/pictures/
-    - name: Commit files
+    - name: Commit files and push
       run: |
           cd ~/main/pic
           git config --local user.email "lemonmiaow@gmail.com"
           git config --local user.name "Lemon-miaow"
           git add .
           git commit -m "##update daily rankings##"
-    - name: Push to main branch
-      uses:  ad-m/github-push-action@master
-      with:
-         github_token: ${{ secrets.GIT_TOKEN }}
-         branch: main
+          ssh-add ${{ secrets.GIT_TOKEN }}
+          git push
