@@ -16,29 +16,36 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
     - name: Deploy the SSH Key
       env:
         GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
       run: |
-          mkdir ~/.ssh
+          sudo timedatectl set-timezone "Asia/Shanghai"
+          mkdir -p ~/.ssh
           echo "$GIT_TOKEN" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
     - name: Clone branch
       run: |
           mkdir ~/source && cd ~/source
-          git clone -b source git@github.com:Lemon-miaow/pic.git
+          git clone -b source git@github.com:Mashirl/pic.git
           mkdir ~/main && cd ~/main
-          git clone -b main git@github.com:Lemon-miaow/pic.git
+          git clone -b main git@github.com:Mashirl/pic.git
     - name: Run
+
       run: |
           cd ~/source/pic/compiled
           chmod +x fetch_md
           ./fetch_md https://raw.githubusercontent.com/gxywy/pixiv-daily/main/README.md
           cp -r `ls ~/source/pic/compiled/* | grep -v fetch_md | xargs` ~/main/pic/pictures/
     - name: Commit files and push
+
       run: |
           cd ~/main/pic
-          git config --local user.email "lemonmiaow@gmail.com"
-          git config --local user.name "Lemon-miaow"
+          git config --local user.email "i@mashirl.com"
+          git config --local user.name "Mashirl"
           git add .
           git commit -m "##update daily rankings##"
           git push
