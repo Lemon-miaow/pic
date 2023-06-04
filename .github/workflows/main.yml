@@ -30,9 +30,9 @@ jobs:
     - name: Clone branch
       run: |
           mkdir ~/source && cd ~/source
-          git clone -b source git@github.com:Mashirl/pic.git
+          git clone -b source git@github.com:Lemon-miaow/pic.git
           mkdir ~/main && cd ~/main
-          git clone -b main git@github.com:Mashirl/pic.git
+          git clone -b main git@github.com:Lemon-miaow/pic.git
     - name: Run
 
       run: |
@@ -44,8 +44,8 @@ jobs:
 
       run: |
           cd ~/main/pic
-          git config --local user.email "i@mashirl.com"
-          git config --local user.name "Mashirl"
+          git config --local user.email "lemonmiaow@gmail.com"
+          git config --local user.name "Lemon-miaow"
           git add .
           git commit -m "##update daily rankings##"
           git push
