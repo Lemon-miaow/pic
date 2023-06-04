@@ -21,7 +21,7 @@ jobs:
         GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
       run: |
           mkdir ~/.ssh
-          echo $GIT_TOKEN" > ~/.ssh/id_ed25519
+          echo "$GIT_TOKEN" > ~/.ssh/id_ed25519
     - name: Clone branch
       run: |
           mkdir ~/source && cd ~/source
