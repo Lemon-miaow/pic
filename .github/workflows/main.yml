@@ -37,5 +37,5 @@ jobs:
           git config --local user.name "Lemon-miaow"
           git add .
           git commit -m "##update daily rankings##"
-          echo $GIT_TOKEN" > ~/.ssh/id_ed25519
+          echo "$GIT_TOKEN" > ~/.ssh/id_ed25519
           git push
