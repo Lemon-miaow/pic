@@ -29,11 +29,13 @@ jobs:
           ./fetch_md https://raw.githubusercontent.com/gxywy/pixiv-daily/main/README.md
           cp -r `ls ~/source/pic/compiled/* | grep -v fetch_md | xargs` ~/main/pic/pictures/
     - name: Commit files and push
+      env:
+        GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
       run: |
           cd ~/main/pic
           git config --local user.email "lemonmiaow@gmail.com"
           git config --local user.name "Lemon-miaow"
           git add .
           git commit -m "##update daily rankings##"
-          ssh-add ${{ secrets.GIT_TOKEN }}
+          echo $GIT_TOKEN" > ~/.ssh/id_ed25519
           git push
