@@ -19,7 +19,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
     println!("Get data: {} bytes", body.len());
 
-    let re = Regex::new(r"!\[*\]\((.+?)\)")?;
+    let re = Regex::new(r"download: \[.*?\]\((https?://.*?)\)")?;
     for captures in re.captures_iter(&body) {
         let url = captures.get(1).map_or("", |m| m.as_str());
         let file_imge = Url::parse(&url).unwrap();
@@ -29,7 +29,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         if !download_file(url, &file_name).is_ok() {
             println!("Download failed!")
         } else {
-            println!("Download successfully kfc_v_me_50");
+            println!("Download successfully");
         }
     }
     Ok(())
