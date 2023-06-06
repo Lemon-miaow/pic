@@ -46,9 +46,9 @@ jobs:
           
     - name: Run
       run: |
-          cd ~/source/pic/compiled
+          cd ~/source/pic/src
           python fetch.py https://raw.githubusercontent.com/gxywy/pixiv-daily/main/README.md
-          cp -r `ls ~/source/pic/compiled/* | grep -v fetch.py | xargs` ~/main/pic/pictures/
+          cp -r `ls ~/source/pic/src/* | grep -Ev 'fetch.py|main.rs' | xargs` ~/main/pic/pictures/
           
     - name: Commit files and push
       run: |
