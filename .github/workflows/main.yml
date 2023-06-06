@@ -16,7 +16,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
+    - name: Install Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+        architecture: 'x64'
+    - name: Install dependencies
+      run: |
+          python -m pip install --upgrade pip
+          pip install requests
+          pip install regex
+        
     - name: Deploy the SSH Key
       env:
         GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
@@ -33,15 +43,15 @@ jobs:
           git clone -b source git@github.com:Lemon-miaow/pic.git
           mkdir ~/main && cd ~/main
           git clone -b main git@github.com:Lemon-miaow/pic.git
+          
     - name: Run
-
       run: |
+          pip install 
           cd ~/source/pic/compiled
-          chmod +x fetch_md
-          ./fetch_md https://raw.githubusercontent.com/gxywy/pixiv-daily/main/README.md
-          cp -r `ls ~/source/pic/compiled/* | grep -v fetch_md | xargs` ~/main/pic/pictures/
+          python fetch.py https://raw.githubusercontent.com/gxywy/pixiv-daily/main/README.md
+          cp -r `ls ~/source/pic/compiled/* | grep -v fetch.py | xargs` ~/main/pic/pictures/
+          
     - name: Commit files and push
-
       run: |
           cd ~/main/pic
           git config --local user.email "lemonmiaow@gmail.com"
