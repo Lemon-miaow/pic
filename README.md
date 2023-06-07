@@ -7,8 +7,8 @@ Used to automatically update and save Pixiv daily rankings.
 The images are saved from [Here](https://github.com/gxywy/pixiv-daily) because I am too wasteful ~~(Lazy)~~.
 
 ## Acknowledgements
-@gxywy  Supported by his [Repositories](https://github.com/gxywy/pixiv-daily).
+**[@gxywy](https://github.com/gxywy)**  // Supported by his [Repositories](https://github.com/gxywy/pixiv-daily).
 
-@CvRain  [Source code](https://github.com/CvRain/simple-fetch-md_img) provider.
+**[@CvRain](https://github.com/CvRain)**  // [Source code](https://github.com/CvRain/simple-fetch-md_img) provider.
 
-@Mashirl  Helping to refine fixing Action workflows
+**[@Mashirl](https://github.com/Mashirl)**  // Helping to refine fixing Action workflows
