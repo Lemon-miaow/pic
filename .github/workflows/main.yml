@@ -42,7 +42,7 @@ jobs:
           mkdir ~/source && cd ~/source
           git clone -b source git@github.com:Lemon-miaow/pic.git
           mkdir ~/main && cd ~/main
-          git clone -b main git@github.com:Lemon-miaow/pic.git
+          git clone -b main git@github.com:Lemon-miaow/pic.git --depth 1
           
     - name: Run
       run: |
