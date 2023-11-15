@@ -52,7 +52,7 @@ jobs:
     - name: Commit files and push
       run: |
           cd ~/main/pic
-          git config --local user.email "lemonmiaow@gmail.com"
+          git config --local user.email "shordenguo@gmail.com"
           git config --local user.name "creater303"
           git add .
           git commit -m "##update daily rankings##"
