@@ -41,6 +41,10 @@ jobs:
           mkdir ~/source && cd ~/source
           git clone -b source git@github.com:Lemon-miaow/pic.git
           mkdir ~/main && cd ~/main
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "/usr/local/share/boost"
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
           git clone -b main git@github.com:Lemon-miaow/pic.git --depth 1
           
     - name: Run
