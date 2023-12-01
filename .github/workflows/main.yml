@@ -61,3 +61,6 @@ jobs:
           git add .
           git commit -m "##update daily rankings##"
           git push
+          if [ $? -ne 0 ]; then
+            exit 78 
+          fi
