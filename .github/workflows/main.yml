@@ -9,12 +9,12 @@ on:
     branches:
       - source  # may only test
     
-jobs:
-  free-disk-space:
+jobs:   
+  build:
     runs-on: ubuntu-latest
-    steps:
 
-    - name: Free Disk Space (Ubuntu)
+    steps:
+    - name: Free Disk Space
       uses: jlumbroso/free-disk-space@main
       with:
         # this might remove tools that are actually needed,
@@ -30,10 +30,6 @@ jobs:
         docker-images: true
         swap-storage: true
         
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
     - name: Install Python
       uses: actions/setup-python@v4
       with:
